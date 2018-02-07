@@ -6,7 +6,7 @@
 #include <vector>
 #include <ctime>
 
-void ComputerGame() {
+void HumanGame() {
     int innumber;
     int correct = 0;
     vector<int> your;
