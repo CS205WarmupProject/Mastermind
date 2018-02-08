@@ -48,10 +48,8 @@ bool check(vector<int> guessVector, vector<int> correctVector, bool hints) {
     if (hints) {
         cout << correctList << endl;
     }
-}
-
-void testCheck() {
-    vector<int> testCorrect =   {1, 4, 2, 2};
-    vector<int> testGuess =     {1, 1, 4, 2};
-    check(testGuess, testCorrect, true);
+    if (numCorrectLoc==4){
+        cout<<"You win! Bye! "<<endl;
+        exit(0);
+    }
 }
