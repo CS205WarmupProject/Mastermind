@@ -11,7 +11,7 @@ void HumanGame() {
     int numCount = 0;
     vector<int> your;
     vector<int> ans;
-    string dis[4];
+    vector<int> control={1,2,3,4,5,6};
     int choice;
     srand(time(NULL));
     for (int i = 1; i <= 4; i++) {
@@ -21,13 +21,23 @@ void HumanGame() {
         cout << ans[i] << ' ';
     }
     cout << endl;
-    while (numCount <= 5) {
-        your.clear();
-        cout << "Please enter your guess(4 digit):" << endl;
-        cin >> innumber;
-        for (int i = 1; i <= 4; i++) {
-            your.push_back(innumber % 10);
-            innumber /= 10;
+    while (numCount < 5) {
+        int correct =0;
+        while(correct!=4) {
+            your.clear();
+            cout << "Please enter your guess(4 digit):" << endl;
+            cin >> innumber;
+            for (int i = 1; i <= 4; i++) {
+                your.push_back(innumber % 10);
+                innumber /= 10;
+            }
+            for (int i = 0; i < 4; i++) {
+                for (int j = 0; j < 6; j++) {
+                    if (your[i] == control[j]) {
+                        correct++;
+                    }
+                }
+            }
         }
         reverse(your.begin(), your.end());
         check(your, ans, true);
