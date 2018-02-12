@@ -9,10 +9,10 @@
 #include <iostream>
 using namespace std;
 
-bool check(vector<int> guessVector, vector<int> correctVector, bool hints) {
+bool check(vector<int> guessVector, vector<int> correctVector, bool hints, int &numCorrectLoc, int &numIncorrectLoc) {
 
-    int numCorrectLoc = 0; //Number of correctly guessed pegs. Corresponds to the colored peg in mastermind
-    int numIncorrectLoc = 0; //Number of pegs where the color was correctly guessed but the location was not. Corresponds to the white peg in mastermind
+    numCorrectLoc = 0; //Number of correctly guessed pegs. Corresponds to the colored peg in mastermind
+    numIncorrectLoc = 0; //Number of pegs where the color was correctly guessed but the location was not. Corresponds to the white peg in mastermind
 
     bool hasCorrespondingArray[4] = {false, false, false, false}; //Keeps track of which pegs in the solution have already been counted
     bool hasBeenChecked[4] = {false, false, false, false}; //keeps track of which pegs in the guess have been checked already
@@ -52,4 +52,5 @@ bool check(vector<int> guessVector, vector<int> correctVector, bool hints) {
         cout<<"You win! Bye! "<<endl;
         exit(0);
     }
+
 }
