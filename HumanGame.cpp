@@ -9,8 +9,10 @@
 void HumanGame() {
     int innumber;
     int numCorrectLoc;
+    char hintstatus;
     int numIncorrectLoc;
     int numCount = 0;
+    bool hint = false;
     vector<int> your;
     vector<int> ans;
     vector<int> control={1,2,3,4,5,6};
@@ -42,7 +44,18 @@ void HumanGame() {
             }
         }
         reverse(your.begin(), your.end());
-        check(your, ans, true, numCorrectLoc, numIncorrectLoc);
+        check(your, ans, hint, numCorrectLoc, numIncorrectLoc);
+        cout << "Do you need a hint?(Y/N)" << endl;
+        cin >> hintstatus;
+        if (hintstatus == 'Y'){
+            hint = true;
+        }
+        else if (hintstatus == 'N'){
+            hint = false;
+        }
+        else{
+            cout << "I don't understand." << endl;
+        }
         numCount++;
     }
     cout<<"All your attempts are being used, you lose! Bye!"<<endl;
