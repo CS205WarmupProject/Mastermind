@@ -8,6 +8,8 @@
 
 void HumanGame() {
     int innumber;
+    int numCorrectLoc;
+    int numIncorrectLoc;
     int numCount = 0;
     vector<int> your;
     vector<int> ans;
@@ -40,7 +42,7 @@ void HumanGame() {
             }
         }
         reverse(your.begin(), your.end());
-        check(your, ans, true);
+        check(your, ans, true, numCorrectLoc, numIncorrectLoc);
         numCount++;
     }
     cout<<"All your attempts are being used, you lose! Bye!"<<endl;
