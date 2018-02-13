@@ -20,6 +20,7 @@ int main() {
             break;
         }
         case 3: {
+            Computerguess();
             break;
         }
     }
