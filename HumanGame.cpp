@@ -42,7 +42,7 @@ void Human_game(vector<int> ansVector){
             }
         }
 
-    }//check the input length of the number, and then check if input the
+    }//check the input length of the number and if it is number, and then check if input number 1-6
     reverse(your.begin(), your.end());
     check(your, ansVector, hint, numCorrectLoc, numIncorrectLoc);
     while(status == 0) {
@@ -60,7 +60,7 @@ void Human_game(vector<int> ansVector){
         } else {
             cout << "I don't understand." << endl;
         }
-    }
+    }//ask user if needs a hint or not
 }
 
 
@@ -81,7 +81,7 @@ void HumanGame() {
     while (numCount < 5) {
         Human_game(ans);
         numCount++;
-    }
+    }//5 guesses(1st trail)
     while(status == 0) {
         cout << "All your attempts are being used! Another five guess?(Y/N)" << endl;
         cin >> another;
@@ -98,6 +98,6 @@ void HumanGame() {
         } else {
             cout << "I don't understand." << endl;
         }
-    }
-    cout<<"All your attempts are being used! You lose! Bye!"<<endl;
+    }//ask for 2nd trail
+    cout<<"All your attempts are being used! You lose! Bye!"<<endl;//lose message
 }
